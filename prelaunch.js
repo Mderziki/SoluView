@@ -19,11 +19,23 @@ document.addEventListener("DOMContentLoaded", () => {
     menuButton.classList.toggle("open", open);
     menuButton.setAttribute("aria-expanded", String(open));
   });
+
+  const closeDropdowns = () => menu.querySelectorAll(".nav-dropdown[open]").forEach(dropdown => {
+    dropdown.open = false;
+  });
+
   menu.querySelectorAll("a").forEach(link => link.addEventListener("click", () => {
     menu.classList.remove("open");
     menuButton.classList.remove("open");
     menuButton.setAttribute("aria-expanded", "false");
+    closeDropdowns();
   }));
+  document.addEventListener("click", event => {
+    if (!menu.contains(event.target)) closeDropdowns();
+  });
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape") closeDropdowns();
+  });
 
   document.querySelectorAll("[data-membership-price]").forEach(node => {
     node.textContent = membershipConfig[node.dataset.membershipPrice].price;
