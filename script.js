@@ -1,9 +1,9 @@
 // SoluView pre-launch configuration.
 // Replace each checkoutUrl with your Stripe, Lemon Squeezy, Paddle, or application URL when ready.
 const membershipConfig = {
-  founding: { price: "US$250 / first year", checkoutUrl: "#" },
-  agency: { price: "US$750 / first year", checkoutUrl: "#" },
-  design: { price: "US$1,500 / first year", checkoutUrl: "#" }
+  founding: { price: "US$250 / first year", checkoutUrl: "membership.html" },
+  agency: { price: "US$750 / first year", checkoutUrl: "membership.html" },
+  design: { price: "US$1,500 / first year", checkoutUrl: "membership.html" }
 };
 
 // Update only with real reservation data. Defaults intentionally do not imply sales.
